@@ -1,0 +1,346 @@
+/* ==========================================
+   1. መነሻ ቅንጅቶች (Global Settings)
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    /* የጀርባው ቀለም ሙሉ ለሙሉ ጥቁር ሳይሆን እጅግ ማራኪ ጥቁር ሰማያዊ ነው */
+    background-color: #0B111E; 
+    color: #E2E8F0; /* ለዓይን የማይደክም ቀለል ያለ ነጭ */
+    scroll-behavior: smooth;
+}
+
+/* ==========================================
+   2. ራስጌ እና ሜኑ (Header & Nav)
+   ========================================== */
+header {
+    background-color: rgba(11, 17, 30, 0.8); /* ጀርባው ትንሽ እንዲታይ የሚያደርግ (Blur) */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 0px rgba(255, 255, 255, 0.05);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 20px;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #F8FAFC;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #94A3B8; /* ረጋ ያለ ቀለም */
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    color: #38BDF8; /* ማራኪ ሰማያዊ */
+}
+
+/* ==========================================
+   3. የመግቢያ ክፍል (Hero Section)
+   ========================================== */
+.hero {
+    padding: 10rem 5% 6rem;
+    background: radial-gradient(circle at top right, #1E293B 0%, #0B111E 60%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 3rem;
+}
+
+.post-card, .posta-card {
+    flex: 1;
+}
+
+.post-card h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: #F8FAFC;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.post-card p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: #94A3B8;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2.2rem;
+    background-color: #38BDF8;
+    color: #0B111E;
+    text-decoration: none;
+    border-radius: 8px; /* የበለጠ ዘመናዊ ቅርጽ */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+}
+
+.btn:hover {
+    background-color: #0EA5E9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+}
+
+.posta-card {
+    display: flex;
+    justify-content: center;
+}
+
+.posta-card img {
+    width: 100%;
+    max-width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border: 4px solid #1E293B;
+    transition: transform 0.3s ease;
+}
+
+.posta-card img:hover {
+    transform: scale(1.03);
+}
+
+/* ==========================================
+   4. አጠቃላይ የክፍሎች ስታይል (Sections Layout)
+   ========================================== */
+section {
+    padding: 7rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about h2, .projects h2, .contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #F8FAFC;
+    font-weight: 800;
+}
+
+.about h2:after, .projects h2:after, .contact h2:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: #38BDF8;
+    margin: 15px auto 0;
+    border-radius: 4px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.9;
+    color: #94A3B8;
+}
+
+/* ==========================================
+   5. የፕሮጀክቶች ክፍል (Projects Section)
+   ========================================== */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    background: #1E293B;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border-color: rgba(56, 189, 248, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.project-card-content {
+    padding: 1.5rem;
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: #F8FAFC;
+}
+
+.project-card p {
+    color: #94A3B8;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   6. የኮንታክት ፎርም (Contact Form)
+   ========================================== */
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background: #1E293B;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact input, .contact textarea {
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #334155;
+    background-color: #0B111E;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #F8FAFC;
+    transition: all 0.3s ease;
+}
+
+.contact input:focus, .contact textarea:focus {
+    outline: none;
+    border-color: #38BDF8;
+    box-shadow: 0 0 0 1px #38BDF8;
+}
+
+.contact textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.contact button {
+    padding: 0.8rem;
+    background-color: #38BDF8;
+    color: #0B111E;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #0EA5E9;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   7. ግርጌ እና ሶሻል ሊንክስ (Footer & Social Links)
+   ========================================== */
+footer {
+    background-color: #0B111E;
+    padding: 4rem 5% 3rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #64748B;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links a {
+    color: #64748B;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    transform: translateY(-4px);
+}
+
+/* የእያንዳንዱ ብራንድ ኦፊሴላዊ ስታንዳርድ ቀለሞች */
+.social-links a[aria-label="Telegram Profile"]:hover { color: #229ED9; }
+.social-links a[aria-label="YouTube Channel"]:hover { color: #FF0000; }
+.social-links a[aria-label="Instagram Profile"]:hover { color: #E1306C; }
+.social-links a[aria-label="Facebook Profile"]:hover { color: #1877F2; }
+.social-links a[aria-label="GitHub Profile"]:hover { color: #F8FAFC; }
+.social-links a[aria-label="LinkedIn Profile"]:hover { color: #0077B5; }
+
+/* ==========================================
+   8. ለተለያዩ ስክሪኖች (Responsive Design)
+   ========================================== */
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+    .posta-card { order: -1; }
+    .posta-card img {
+        max-width: 280px;
+        height: 280px;
+    }
+    .post-card h1 { font-size: 2.5rem; }
+}
+
+@media (max-width: 480px) {
+    .post-card h1 { font-size: 2.2rem; }
+    .about h2, .projects h2, .contact h2 { font-size: 2rem; }
+}
