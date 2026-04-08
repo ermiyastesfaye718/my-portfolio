@@ -249,26 +249,162 @@ nav {
 /* ==========================================
    6. ፎርም እና ፎተር
    ========================================== */
-.contact form {
-    max-width: 600px;
+/* --- Professional Contact Section --- */
+.contact {
+    padding: 80px 0;
+    background-color: #0F172A; /* ካለህ Dark Theme ጋር የሚስማማ */
+    color: #E2E8F0;
+}
+
+/* Container for all sections - if not already defined */
+.container {
+    max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    background: #1E293B;
-    padding: 2.5rem;
-    border-radius: 12px;
+    padding: 0 20px;
 }
 
-.contact input, .contact textarea {
-    padding: 0.8rem 1rem;
-    margin-bottom: 1.5rem;
-    background-color: #0B111E;
-    border: 1px solid #334155;
+/* --- Section Title and Underline --- */
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
     color: #F8FAFC;
-    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
-/* --- Professional Footer Styles --- */
+.title-underline {
+    width: 60px;
+    height: 4px;
+    background-color: #38BDF8; /* Blue color */
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* --- Form Wrapper for Centering --- */
+.contact-form-wrapper {
+    max-width: 700px; /* limits width for better reading */
+    margin: 0 auto; /* centers the entire form */
+    background: #1E293B; /* slightly lighter card background */
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Input Group Styling --- */
+.input-group {
+    position: relative; /* for absolute icon placement */
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #94A3B8;
+    margin-bottom: 8px;
+    text-align: left; /* ensures label is on the left */
+}
+
+/* --- General Input/Textarea Fields Styling --- */
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 15px 15px 15px 50px; /* leaves space for icon */
+    background-color: #0F172A; /* darker input field */
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #F8FAFC;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Styling for placeholder text */
+.contact input::placeholder, .contact textarea::placeholder {
+    color: #64748B;
+    font-size: 0.9rem;
+}
+
+/* Textarea height and resize control */
+.contact textarea {
+    resize: vertical; /* only vertical resize */
+    min-height: 150px;
+}
+
+/* --- Icons within Inputs --- */
+.input-icon {
+    position: absolute;
+    left: 18px;
+    top: 45px; /* places it centrally below the label */
+    font-size: 1rem;
+    color: #64748B;
+    transition: color 0.3s ease;
+}
+
+.textarea-icon {
+    top: 50px; /* slightly different for textarea */
+}
+
+/* --- Input Focus Effects --- */
+.contact input:focus, .contact textarea:focus {
+    outline: none;
+    background-color: #111; /* deeper black when focused */
+    border-color: #38BDF8; /* blue border on focus */
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+}
+
+/* Icon changes color on focus */
+.contact input:focus + .input-icon, .contact textarea:focus + .input-icon {
+    color: #38BDF8;
+}
+
+/* --- Modern submit button --- */
+.submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* full width on mobile */
+    padding: 15px 30px;
+    background-color: #38BDF8; /* blue button */
+    color: #0F172A; /* dark text */
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(56, 189, 248, 0.3);
+}
+
+.submit-btn i {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Button Hover Effects */
+.submit-btn:hover {
+    background-color: #0EA5E9; /* darker blue */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(56, 189, 248, 0.4);
+}
+
+/* Icon animation on hover */
+.submit-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .contact-form-wrapper {
+        padding: 30px;
+    }
+}
+
+/* ---  Footer Styles --- */
 .main-footer {
     background-color: #0B111E;
     padding: 80px 0 30px;
