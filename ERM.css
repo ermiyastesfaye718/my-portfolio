@@ -268,41 +268,94 @@ nav {
     border-radius: 8px;
 }
 
-footer {
-    padding: 4rem 5% 3rem;
-    text-align: center;
+/* --- Footer Layout --- */
+.main-footer {
+    background-color: #0B111E;
+    padding: 60px 5% 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.social-links {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr; /* ሦስት አምድ */
+    gap: 40px;
 }
 
-.social-links a {
+.footer-col h2.footer-logo {
+    color: #F8FAFC;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.footer-col h3 {
+    color: #F8FAFC;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.footer-col p {
+    color: #94A3B8;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list li {
+    color: #94A3B8;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-list li i {
+    color: #38BDF8; /* ሰማያዊ ምልክት */
+    margin-right: 12px;
+    font-size: 0.9rem;
+}
+
+/* Social Links styling */
+.social-links-footer {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links-footer a {
     color: #64748B;
-    font-size: 24px;
+    font-size: 1.5rem;
     transition: 0.3s;
 }
 
-.social-links a:hover { color: #38BDF8; transform: translateY(-4px); }
+.social-links-footer a:hover {
+    color: #38BDF8;
+    transform: translateY(-3px);
+}
 
-/* ==========================================
-   7. ተለዋዋጭ ስክሪኖች (Responsiveness)
-   ========================================== */
-@media (max-width: 900px) {
-    .about-grid {
+/* Footer Bottom Bar */
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #64748B;
+}
+
+/* ስልክ ላይ ሲታይ ተደራራቢ እንዲሆን */
+@media (max-width: 768px) {
+    .footer-container {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    .about-bio h2, .about-bio h2:after {
-        text-align: center;
-        margin: 0 auto 20px;
+    .social-links-footer {
+        justify-content: center;
     }
-    .about-bio p { text-align: center; }
-    .skills-list { justify-content: center; }
-    
-    .hero-content { flex-direction: column; text-align: center; }
-    .posta-card { order: -1; }
+    .footer-list li {
+        justify-content: center;
+    }
 }
