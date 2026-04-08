@@ -109,18 +109,40 @@ Security: Password Hashing (BCrypt), Session Protection</p>
     </section>
 
     <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <form action="https://formspree.io/f/xkopvpvr" method="POST">
-            
-            <input type="text" name="name" id="name" placeholder="Your Name" required>
-            
-            <input type="email" name="_replyto" id="email" placeholder="Your Email" required>
-            
-            <textarea name="message" id="message" placeholder="Your Message" required></textarea>
-            
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+    <div class="container">
+        <div class="section-title">
+            <h2>Contact Me</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="contact-form-wrapper">
+            <form action="https://formspree.io/f/xkopvpvr" method="POST">
+                
+                <div class="input-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" name="name" id="name" placeholder="Abebe lemma" required>
+                    <i class="fas fa-user input-icon"></i>
+                </div>
+                
+                <div class="input-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" name="_replyto" id="email" placeholder="abebe.lemma@email.com" required>
+                    <i class="fas fa-envelope input-icon"></i>
+                </div>
+                
+                <div class="input-group">
+                    <label for="message">Your Message</label>
+                    <textarea name="message" id="message" rows="6" placeholder="Write your message here..." required></textarea>
+                    <i class="fas fa-comments input-icon textarea-icon"></i>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    Send Message <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
 
  <footer class="main-footer">
     <div class="footer-container">
