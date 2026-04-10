@@ -66,31 +66,50 @@ nav {
 /* ==========================================
    3. የመግቢያ ክፍል (Hero Section)
    ========================================== */
+/* ==========================================
+   የመግቢያ ክፍል (Hero Section) - የተስተካከለ
+   ========================================== */
 .hero {
-    padding: 10rem 5% 6rem;
+    padding: 8rem 5% 4rem; /* Padding ቀነስን - ይዘቱ ወደ ላይ እንዲመጣ */
     background: radial-gradient(circle at top right, #1E293B 0%, #0B111E 60%);
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
+    justify-content: center; /* ይዘቱን መሃል ለማድረግ */
 }
 
 .hero-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* ጽሑፉንና ፎቶውን ያቀራርባል */
     align-items: center;
-    max-width: 1200px;
+    max-width: 1100px; /* ስፋቱን በመቀነስ ይዘቱ እንዲቀራረብ አደረግን */
     margin: 0 auto;
     width: 100%;
-    gap: 3rem;
+    gap: 2rem; /* በጽሑፉና በፎቶው መካከል ያለው ርቀት (ተቀራርቧል) */
 }
 
-.post-card h1 {
+.post-card {
+    flex: 1.2; /* ለጽሑፉ ትንሽ ሰፋ ያለ ቦታ */
+    text-align: left;
+}
+
+.post-card h2 {
     font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: #F8FAFC;
     font-weight: 800;
+    line-height: 1.1;
 }
 
+.post-card p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #94A3B8;
+    line-height: 1.6;
+    max-width: 500px; /* ጽሑፉ በጣም ተለጥጦ እንዳይርቅ */
+}
+
+/* --- በተን Hover Effect --- */
 .btn {
     display: inline-block;
     padding: 0.8rem 2.2rem;
@@ -99,17 +118,60 @@ nav {
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* ለስላሳ እንቅስቃሴ */
+    box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+}
+
+.btn:hover {
+    background-color: #F8FAFC; /* Hover ሲሆን ወደ ነጭ ይቀየራል */
+    color: #38BDF8;
+    transform: scale(1.05) translateY(-3px); /* ትንሽ ወደ ላይ ይነሳል */
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.5);
+}
+
+/* --- ፎቶውን ፍጹም ክብ (Circle) የማድረግ ስራ --- */
+.posta-card {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .posta-card img {
-    width: 100%;
-    max-width: 360px;
-    height: 360px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    border: 4px solid #1E293B;
+    width: 320px; /* ቋሚ ስፋት */
+    height: 320px; /* ቋሚ ቁመት */
+    border-radius: 50%; /* ፍጹም ክብ ቅርጽ */
+    object-fit: cover; /* ፎቶው እንዳይለጠጥ ያደርጋል */
+    border: 6px solid #1E293B; /* ዙሪያውን የሚያምር ፍሬም */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+}
+
+.posta-card img:hover {
+    transform: rotate(3deg) scale(1.03); /* Hover ሲሆን ትንሽ ዞር ይላል */
+    border-color: #38BDF8; /* ፍሬሙ ወደ ሰማያዊ ይቀየራል */
+}
+
+/* ለሞባይል ሲሆን (Responsiveness) */
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+    .post-card {
+        text-align: center;
+        order: 2;
+    }
+    .post-card p {
+        margin: 0 auto 2rem;
+    }
+    .posta-card {
+        order: 1;
+    }
+    .posta-card img {
+        width: 250px;
+        height: 250px;
+    }
 }
 
 /* ==========================================
