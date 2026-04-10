@@ -266,46 +266,120 @@ nav {
 /* ==========================================
    5. የፕሮጀክቶች እና ኮንታክት ክፍሎች
    ========================================== */
-.projects, .contact {
-    padding: 7rem 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
-.projects h2, .contact h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #F8FAFC;
+.projects {
+    padding: 80px 0;
+    background-color: #0F172A; /* ከ Dark Theme ጋር የሚሄድ */
 }
 
 .project-grid {
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* ጎን ለጎን ለማሰለፍ */
+    gap: 30px;
+    padding: 0 20px;
 }
 
 .project-card {
     background: #1E293B;
-    border-radius: 12px;
+    border-radius: 15px;
     overflow: hidden;
-    transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
-    border-color: #38BDF8;
+    transform: translateY(-10px); /* Hover ሲሆን ትንሽ ከፍ ይላል */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.project-card img {
+.project-img {
     width: 100%;
     height: 220px;
+    overflow: hidden;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.project-card:hover .project-img img {
+    transform: scale(1.1); /* Hover ሲሆን ፎቶው ይጨምራል */
 }
 
 .project-card-content {
-    padding: 1.5rem;
+    padding: 25px;
+}
+
+.project-card-content h3 {
+    color: #F8FAFC;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.project-desc {
+    color: #94A3B8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* የባህሪዎች ዝርዝር (Bullet points) */
+.project-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.project-features li {
+    color: #CBD5E1;
+    font-size: 0.88rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.project-features li i {
+    color: #38BDF8; /* ሰማያዊ የራይት ምልክት */
+    margin-right: 10px;
+    font-size: 0.85rem;
+}
+
+/* የቴክኖሎጂ ሳጥኖች (Tags) */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.project-tags span {
+    background: rgba(56, 189, 248, 0.1);
+    color: #38BDF8;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+/* View Project Link */
+.view-project {
+    color: #38BDF8;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.view-project:hover {
+    gap: 15px; /* ቀስቷ ፈቀቅ ትላለች */
 }
 
 /* ==========================================
